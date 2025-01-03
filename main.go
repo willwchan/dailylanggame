@@ -1,4 +1,4 @@
-package dailylanggame
+package main
 
 import (
 	"fmt"
@@ -13,11 +13,11 @@ func main() {
 	router := mux.NewRouter()
 
 	// Define routes
-	router.HandleFunc("/daily", game.getConfigs).Methods("GET")
-	router.HandleFunc("/daily/{id}", game.getConfig).Methods("GET")
-	router.HandleFunc("/daily", game.createConfig).Methods("POST")
-	router.HandleFunc("/daily/{id}", game.updateConfig).Methods("PUT")
-	router.HandleFunc("/daily/{id}", game.deleteConfig).Methods("DELETE")
+	router.HandleFunc("/daily", game.GetConfigs).Methods("GET")
+	router.HandleFunc("/daily/{id}", game.GetConfig).Methods("GET")
+	router.HandleFunc("/daily", game.CreateConfig).Methods("POST")
+	router.HandleFunc("/daily/{id}", game.UpdateConfig).Methods("PUT")
+	router.HandleFunc("/daily/{id}", game.DeleteConfig).Methods("DELETE")
 
 	// Start the server
 	fmt.Println("Server started at :8000")

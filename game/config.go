@@ -37,12 +37,12 @@ var configs = []DailyConfig{
 }
 
 // get all items
-func getConfigs(w http.ResponseWriter, r *http.Request) {
+func GetConfigs(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(configs)
 }
 
-func getConfig(w http.ResponseWriter, r *http.Request) {
+func GetConfig(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	for _, config := range configs {
 		if config.ID == params["id"] {
@@ -55,7 +55,7 @@ func getConfig(w http.ResponseWriter, r *http.Request) {
 }
 
 // new config for new user
-func createConfig(w http.ResponseWriter, r *http.Request) {
+func CreateConfig(w http.ResponseWriter, r *http.Request) {
 	var newConfig DailyConfig
 	err := json.NewDecoder(r.Body).Decode(&newConfig)
 	if err != nil {
@@ -71,7 +71,7 @@ func createConfig(w http.ResponseWriter, r *http.Request) {
 }
 
 // update config
-func updateConfig(w http.ResponseWriter, r *http.Request) {
+func UpdateConfig(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	var updatedConfig DailyConfig
 	err := json.NewDecoder(r.Body).Decode(&updatedConfig)
@@ -92,7 +92,7 @@ func updateConfig(w http.ResponseWriter, r *http.Request) {
 	http.Error(w, "Item not found", http.StatusNotFound)
 }
 
-func deleteConfig(w http.ResponseWriter, r *http.Request) {
+func DeleteConfig(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	for i, config := range configs {
 		if config.ID == params["id"] {
