@@ -1,4 +1,4 @@
-package dailylanggame
+package github.com/willwchan/dailylanggame
 
 import (
 	"fmt"

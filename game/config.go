@@ -1,4 +1,4 @@
-package dailylanggame/game
+package github.com/willwchan/dailylanggame/game
 
 import (
 	"encoding/json"

@@ -1,2 +1,4 @@
 github.com/gorilla/mux v1.8.1 h1:TuBL49tXwgrFYWhqrNgrUNEY92u81SPhu7sTdzQEiWY=
 github.com/gorilla/mux v1.8.1/go.mod h1:AKf9I4AEqPTmMytcMc0KkNouC66V3BtZ4qD5fmWSiMQ=
+github.com/willwchan/dailylanggame/game v0.0.0-20250103032614-494fda8f1d79 h1:oiKpEN4Ti6VI223apL8hDKn1S/tbsXmZPChfO3lp3wE=
+github.com/willwchan/dailylanggame/game v0.0.0-20250103032614-494fda8f1d79/go.mod h1:bxP/hZ9Th/9ITAVJht6c9mQexbViPWFWmtw5W6TAWXA=
