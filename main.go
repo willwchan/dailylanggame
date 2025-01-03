@@ -3,7 +3,7 @@ package dailylanggame
 import (
 	"fmt"
 	"github.com/gorilla/mux"
-	"github.com/willwchan/dailylanggame/game"
+	game "github.com/willwchan/dailylanggame/game"
 	"log"
 	"net/http"
 )
@@ -13,11 +13,11 @@ func main() {
 	router := mux.NewRouter()
 
 	// Define routes
-	router.HandleFunc("/daily", getConfigs).Methods("GET")
-	router.HandleFunc("/daily/{id}", getConfig).Methods("GET")
-	router.HandleFunc("/daily", createConfig).Methods("POST")
-	router.HandleFunc("/daily/{id}", updateConfig).Methods("PUT")
-	router.HandleFunc("/daily/{id}", deleteConfig).Methods("DELETE")
+	router.HandleFunc("/daily", game.getConfigs).Methods("GET")
+	router.HandleFunc("/daily/{id}", game.getConfig).Methods("GET")
+	router.HandleFunc("/daily", game.createConfig).Methods("POST")
+	router.HandleFunc("/daily/{id}", game.updateConfig).Methods("PUT")
+	router.HandleFunc("/daily/{id}", game.deleteConfig).Methods("DELETE")
 
 	// Start the server
 	fmt.Println("Server started at :8000")
